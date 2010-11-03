@@ -1,0 +1,6 @@
+*~
+tiapp.xml
+manifest
+build/*
+build/android/*
+build/iphone/*
