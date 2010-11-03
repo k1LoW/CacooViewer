@@ -1,7 +1,7 @@
 var win = Titanium.UI.currentWindow;
 
 var image = Titanium.UI.createImageView({
-                                            image:'cacoo_back.png'
+                                            image:'images/cacoo_back.png'
                                         });
 win.add(image);
 
@@ -36,9 +36,9 @@ Titanium.UI.currentWindow.addEventListener('focus', function(e) {
                                                            data.result[i].hasChild = true;
 
                                                            if (data.result[i].security === 'private') {
-                                                               data.result[i].leftImage = 'table_sheets_private.png';
+                                                               data.result[i].leftImage = 'images/table_sheets_private.png';
                                                            } else {
-                                                               data.result[i].leftImage = 'table_sheets.png';
+                                                               data.result[i].leftImage = 'images/table_sheets.png';
                                                            }
 
                                                        }

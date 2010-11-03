@@ -73,7 +73,7 @@ info.addEventListener('click', function(e) {
                                              });
 
                           var image = Titanium.UI.createImageView({
-                                                                      image:'101000lab.png'
+                                                                      image:'images/101000lab.png'
                                                                   });
                           w.add(image);
                           w.open();

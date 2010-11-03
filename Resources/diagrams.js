@@ -3,7 +3,7 @@ var win = Titanium.UI.currentWindow;
 win.backgroundColor = '#FFF';
 
 var image = Titanium.UI.createImageView({
-                                            image:'cacoo_back.png'
+                                            image:'images/cacoo_back.png'
                                         });
 
 win.add(image);
@@ -47,9 +47,9 @@ if (apiKey !== '') {
             data.sheets[i].title = data.sheets[i].name;
             data.sheets[i].hasChild = true;
             if (data.security === 'private') {
-                data.sheets[i].leftImage = 'table_diagram_private.png';
+                data.sheets[i].leftImage = 'images/table_diagram_private.png';
             } else {
-                data.sheets[i].leftImage = 'table_diagram.png';
+                data.sheets[i].leftImage = 'images/table_diagram.png';
             }
             delete data.sheets[i].width;
             delete data.sheets[i].height;

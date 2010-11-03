@@ -20,7 +20,7 @@ var sheets = Titanium.UI.createWindow({
                                     });
 
 var tab1 = Titanium.UI.createTab({
-                                     icon:'sheets.png',
+                                     icon:'images/sheets.png',
                                      title:'Sheets',
                                      window:sheets
                                  });
@@ -34,7 +34,7 @@ var setting = Titanium.UI.createWindow({
                                         url: 'setting.js'
                                     });
 var tab2 = Titanium.UI.createTab({
-                                     icon:'setting.png',
+                                     icon:'images/setting.png',
                                      title:'Setting',
                                      window:setting
                                  });
