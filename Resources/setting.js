@@ -5,25 +5,45 @@ if (Titanium.App.Properties.hasProperty('apiKey')) {
     apiKey = Titanium.App.Properties.getString('apiKey');
 }
 
+var apiKeyContent = Titanium.UI.createView({
+                                             top:90,
+                                             width:300,
+                                             height:'auto'
+                                         });
+
 var apiKeyLabel = Titanium.UI.createLabel({
                                               color:'#333',
                                               text:'API Key',
                                               font:{fontSize:16,fontFamily:'Helvetica Neue'},
-                                              top:94,
-                                              left:30,
-                                              width:100,
+                                              top:0,
+                                              left:0,
+                                              width:250,
                                               height:'auto'
                                           });
 
-win.add(apiKeyLabel);
+apiKeyContent.add(apiKeyLabel);
+
+var apiKeyCacoo = Titanium.UI.createView({
+                                             backgroundImage: 'images/apikey.png',
+                                             top:28,
+                                             right:3,
+                                             width:35,
+                                             height:35
+                                         });
+
+apiKeyCacoo.addEventListener('singletap', function() {
+                             Titanium.Platform.openURL('https://cacoo.com/profile/api');
+                          });
+
+apiKeyContent.add(apiKeyCacoo);
 
 var apiKeyField = Titanium.UI.createTextField({
                                                   value:apiKey,
                                                   color:'#336699',
                                                   hintText:'API Key',
                                                   height:35,
-                                                  top:120,
-                                                  left:30,
+                                                  top:30,
+                                                  left:0,
                                                   width:250,
                                                   borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED
                                               });
@@ -57,7 +77,9 @@ apiKeyField.addEventListener('change', function(e)
                                  }
                              });
 
-Titanium.UI.currentWindow.add(apiKeyField);
+apiKeyContent.add(apiKeyField);
+
+win.add(apiKeyContent);
 
 var info = Titanium.UI.createButton({
                                         systemButton:Titanium.UI.iPhone.SystemButton.INFO_LIGHT

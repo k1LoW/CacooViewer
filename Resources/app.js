@@ -10,9 +10,18 @@ if (Titanium.App.Properties.hasProperty('apiKey')) {
     apiKey = Titanium.App.Properties.getString('apiKey');
 }
 
-//
-// create base UI tab and root window
-//
+/**
+ * sheets
+ */
+// button
+var btnReload = Ti.UI.createButton({
+                                       systemButton:Titanium.UI.iPhone.SystemButton.REFRESH
+                           });
+
+btnReload.addEventListener('click', function() {
+                               sheets.fireEvent('focus');
+                   });
+
 var sheets = Titanium.UI.createWindow({
                                         title:'Sheets',
                                         backgroundColor:'#fff',
@@ -22,12 +31,13 @@ var sheets = Titanium.UI.createWindow({
 var tab1 = Titanium.UI.createTab({
                                      icon:'images/sheets.png',
                                      title:'Sheets',
+                                     leftNavButton:btnReload,
                                      window:sheets
                                  });
 
-//
-// create controls tab and root window
-//
+/**
+ * setting
+ */
 var setting = Titanium.UI.createWindow({
                                         title:'Setting',
                                         backgroundColor:'#fff',

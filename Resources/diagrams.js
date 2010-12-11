@@ -68,7 +68,7 @@ if (apiKey !== '') {
                                 var row = e.rowData;
 
                                 var diagram = Ti.UI.createWebView();
-                                var html = '<html><head><title>' + row.title + '</title><meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale = 1.0, minimum-scale = 1.0, maximum-scale = 10.0" /> <meta name="apple-mobile-web-app-capable" content="yes" /></head><body><div><img width="300px" src="' + row.imageUrlForApi + '?apiKey=' + apiKey + '" /></div></body></html>';
+                                var html = '<html><head><title>' + row.title + '</title><meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale = 1.0, minimum-scale = 1.0, maximum-scale = 10.0" /> <meta name="apple-mobile-web-app-capable" content="yes" /></head><body><div><img width="100%" src="' + row.imageUrlForApi + '?apiKey=' + apiKey + '" /></div></body></html>';
                                 diagram.html = html;
                                 var w = Ti.UI.createWindow({title:row.title});
 
