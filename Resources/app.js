@@ -1,8 +1,10 @@
 // this sets the background color of the master UIView (when there are no windows/tab groups on it)
 Titanium.UI.setBackgroundColor('#000');
 
+
 // create tab group
-var tabGroup = Titanium.UI.createTabGroup({barColor:'#106ACD'});
+var tabGroup = Titanium.UI.createTabGroup({barColor:'#106ACD'
+                                          });
 
 var apiKey = '';
 
@@ -13,15 +15,6 @@ if (Titanium.App.Properties.hasProperty('apiKey')) {
 /**
  * sheets
  */
-// button
-var btnReload = Ti.UI.createButton({
-                                       systemButton:Titanium.UI.iPhone.SystemButton.REFRESH
-                           });
-
-btnReload.addEventListener('click', function() {
-                               sheets.fireEvent('focus');
-                   });
-
 var sheets = Titanium.UI.createWindow({
                                         title:'Sheets',
                                         backgroundColor:'#fff',
@@ -31,7 +24,6 @@ var sheets = Titanium.UI.createWindow({
 var tab1 = Titanium.UI.createTab({
                                      icon:'images/sheets.png',
                                      title:'Sheets',
-                                     leftNavButton:btnReload,
                                      window:sheets
                                  });
 

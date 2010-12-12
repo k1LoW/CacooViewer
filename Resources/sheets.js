@@ -5,6 +5,17 @@ var image = Titanium.UI.createImageView({
                                         });
 win.add(image);
 
+// button
+var btnReload = Ti.UI.createButton({
+                                       systemButton:Titanium.UI.iPhone.SystemButton.REFRESH
+                           });
+
+btnReload.addEventListener('click', function() {
+                               win.fireEvent('focus');
+                   });
+
+win.leftNavButton = btnReload;
+
 var apiKey = '';
 
 
@@ -13,7 +24,7 @@ var a = Titanium.UI.createAlertDialog({
                                           message:'Please set API Key'
                                       });
 
-Titanium.UI.currentWindow.addEventListener('focus', function(e) {
+win.addEventListener('focus', function(e) {
                                                if (Titanium.App.Properties.hasProperty('apiKey')) {
                                                    apiKey = Titanium.App.Properties.getString('apiKey');
                                                }
